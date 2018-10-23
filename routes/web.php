@@ -14,3 +14,7 @@
 $router->get('/', function () {
     return view('index');
 });
+
+$router->get('poll', ['as' => 'poll_1.index', 'uses' => 'PollController@index']);
+$router->get('poll/{hash}', ['as' => 'poll_1.view', 'uses' => 'PollController@show']);
+$router->put('poll', ['as' => 'poll_1.create', 'uses' => 'PollController@store']);
